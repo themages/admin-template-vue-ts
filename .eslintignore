@@ -1,0 +1,14 @@
+node_modules
+.vscode
+*.log*
+.env*
+dist
+public
+vite.config.ts
+commitlint.config.cjs
+tailwind.config.cjs
+postcss.config.cjs
+tsconfig.json
+tsconfig.node.json
+package.json
+README.md
