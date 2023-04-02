@@ -111,7 +111,7 @@
   ],
   "stylelint.validate": ["css", "scss", "vue"],
   "json.trace.server": "off",
-  "cSpell.words": ["vite", "preinstall", "pinia", "commitlint", "tailwindcss"],
+  "cSpell.words": ["vite", "preinstall", "pinia", "commitlint", "tailwindcss", "stylelint"],
 	"workbench.iconTheme": "vscode-icons",
 	"typescript.updateImportsOnFileMove.enabled": "always",
 	"javascript.updateImportsOnFileMove.enabled": "always",
