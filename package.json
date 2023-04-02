@@ -20,9 +20,35 @@
     "lint:style": "stylelint --fix 'src/**/*.{css,scss,vue}'",
     "prepare": "husky install"
   },
+  "lint-staged": {
+    "src/**/*.{js,jsx,ts,tsx,vue}": [
+      "eslint --fix"
+    ],
+    "src/**/*.{css,scss,vue}": [
+      "stylelint --fix"
+    ]
+  },
+  "keywords": [
+    "vue-admin-template",
+    "vue-vite-ts"
+  ],
   "engines": {
     "node": ">=18.15.0"
   },
+  "author": {
+    "name": "曾星旗",
+    "email": "me@zengxingqi.com",
+    "url": "https://canicode.cn"
+  },
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/themages/admin-template-vue-ts.git"
+  },
+  "bugs": {
+    "url": "https://github.com/themages/admin-template-vue-ts/issues"
+  },
+  "homepage": "https://github.com/themages/admin-template-vue-ts",
   "dependencies": {
     "vue": "^3.2.47"
   },
@@ -49,19 +75,5 @@
     "vite": "^4.2.0",
     "vite-plugin-inspect": "^0.7.18",
     "vue-tsc": "^1.2.0"
-  },
-  "keywords": [
-    "vue-admin-template",
-    "vue-vite-ts"
-  ],
-  "lint-staged": {
-    "src/**/*.{js,jsx,ts,tsx,vue}": [
-      "eslint --fix"
-    ],
-    "src/**/*.{css,scss,vue}": [
-      "stylelint --fix"
-    ]
-  },
-  "author": "曾星旗 <me@zengxingqi.com> (https://canicode.cn/)",
-  "license": "ISC"
+  }
 }
