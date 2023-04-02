@@ -16,7 +16,8 @@
     "type-check": "vue-tsc",
     "preview": "vite preview",
     "preinstall": "npx only-allow pnpm",
-    "lint": "eslint --fix --ext .ts,.tsx,.js,.jsx,.vue src"
+    "lint": "eslint --fix --ext .ts,.tsx,.js,.jsx,.vue src",
+    "prepare": "husky install"
   },
   "engines": {
     "node": ">=18.15.0"
@@ -25,6 +26,8 @@
     "vue": "^3.2.47"
   },
   "devDependencies": {
+    "@commitlint/cli": "^17.5.1",
+    "@commitlint/config-conventional": "^17.4.4",
     "@types/node": "^18.15.11",
     "@typescript-eslint/eslint-plugin": "^5.43.0",
     "@vitejs/plugin-vue": "^4.1.0",
@@ -34,13 +37,23 @@
     "eslint-plugin-n": "^15.0.0",
     "eslint-plugin-promise": "^6.0.0",
     "eslint-plugin-vue": "^9.10.0",
+    "husky": "^8.0.0",
+    "lint-staged": "^13.2.0",
     "sass": "^1.60.0",
     "typescript": "^4.9.5",
     "vite": "^4.2.0",
     "vite-plugin-inspect": "^0.7.18",
     "vue-tsc": "^1.2.0"
   },
-  "keywords": ["vue-admin-template", "vue-vite-ts"],
+  "keywords": [
+    "vue-admin-template",
+    "vue-vite-ts"
+  ],
+  "lint-staged": {
+    "src/*.{js,jsx,vue,ts,tsx}": [
+      "pnpm lint"
+    ]
+  },
   "author": "曾星旗 <me@zengxingqi.com> (https://canicode.cn/)",
   "license": "ISC"
 }
