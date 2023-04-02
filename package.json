@@ -56,10 +56,10 @@
   ],
   "lint-staged": {
     "src/**/*.{js,jsx,ts,tsx,vue}": [
-      "pnpm lint:eslint"
+      "eslint --fix"
     ],
     "src/**/*.{css,scss,vue}": [
-      "pnpm lint:style"
+      "npx stylelint --fix"
     ]
   },
   "author": "曾星旗 <me@zengxingqi.com> (https://canicode.cn/)",
