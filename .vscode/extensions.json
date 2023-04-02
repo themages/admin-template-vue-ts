@@ -19,6 +19,7 @@
     "naumovs.color-highlight",
     "kisstkondoros.vscode-codemetrics",
     "Vue.volar",
-    "Vue.vscode-typescript-vue-plugin"
+    "Vue.vscode-typescript-vue-plugin",
+    "stylelint.vscode-stylelint"
   ]
 }

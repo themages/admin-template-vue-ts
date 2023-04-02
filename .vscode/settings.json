@@ -81,7 +81,8 @@
   "editor.codeActionsOnSave": {
     "source.fixAll": false,
     "source.fixAll.eslint": true,
-    "eslint.autoFixOnSave": true
+    "eslint.autoFixOnSave": true,
+    "source.fixAll.stylelint": true,
   },
   "files.eol": "\n",
   "eslint.codeActionsOnSave.rules": null,
@@ -108,6 +109,7 @@
     "css",
     "markdown"
   ],
+  "stylelint.validate": ["css", "scss", "vue"],
   "json.trace.server": "off",
   "cSpell.words": ["vite", "preinstall", "pinia", "commitlint", "tailwindcss"],
 	"workbench.iconTheme": "vscode-icons",

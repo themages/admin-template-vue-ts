@@ -19,6 +19,7 @@ module.exports = {
     'vue'
   ],
   rules: {
-    '@typescript-eslint/triple-slash-reference': 0
+    '@typescript-eslint/triple-slash-reference': 0,
+    '@typescript-eslint/key-spacing': 0
   }
 }
