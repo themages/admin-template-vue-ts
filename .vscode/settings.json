@@ -103,11 +103,7 @@
     "typescriptreact",
     "json",
     "jsonc",
-    "html",
-    "vue",
-    "scss",
-    "css",
-    "markdown"
+    "vue"
   ],
   "stylelint.validate": ["css", "scss", "vue"],
   "json.trace.server": "off",
