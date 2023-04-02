@@ -17,7 +17,7 @@
     "preview": "vite preview",
     "preinstall": "npx only-allow pnpm",
     "lint:eslint": "eslint --fix --ext .ts,.tsx,.js,.jsx,.vue src",
-    "lint:style": "npx stylelint --fix 'src/**/*.{css,scss,vue}'",
+    "lint:style": "stylelint --fix 'src/**/*.{css,scss,vue}'",
     "prepare": "husky install"
   },
   "engines": {
@@ -59,7 +59,7 @@
       "eslint --fix"
     ],
     "src/**/*.{css,scss,vue}": [
-      "npx stylelint --fix"
+      "stylelint --fix"
     ]
   },
   "author": "曾星旗 <me@zengxingqi.com> (https://canicode.cn/)",
