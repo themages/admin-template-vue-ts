@@ -50,7 +50,14 @@
   },
   "homepage": "https://github.com/themages/admin-template-vue-ts",
   "dependencies": {
-    "vue": "^3.2.47"
+    "@vueuse/core": "^9.13.0",
+    "axios": "^1.3.4",
+    "dayjs": "^1.11.7",
+    "lodash-es": "^4.17.21",
+    "pinia": "^2.0.33",
+    "vue": "^3.2.47",
+    "vue-i18n": "^9.2.2",
+    "vue-router": "^4.1.6"
   },
   "devDependencies": {
     "@commitlint/cli": "^17.5.1",
