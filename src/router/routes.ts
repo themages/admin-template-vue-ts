@@ -8,7 +8,8 @@ import {
   // BASE_PAGE_LOGOUT,
   BASE_PAGE_REGISTER,
   BASE_PAGE_HELP,
-  DEFAULT_VIEW_HOME
+  DEFAULT_VIEW_HOME,
+  BASE_PAGE_PATH_MATCH
 } from '@/router/routesName'
 const MenuBar = async (): Promise<Component> => await import('@/components/user/MenuBar.vue')
 const PersonalCenter = async (): Promise<Component> => await import('@/components/user/PersonalCenter.vue')
@@ -22,7 +23,7 @@ const RegisterComponent = async (): Promise<Component> => await import('@/views/
 const HomeComponent = async (): Promise<Component> => await import('@/views/home/homeComponent.vue')
 
 // 基础路由，无需权限，公开访问
-export const base = [
+export const base: RouteRecordRaw[] = [
   {
     path: `/${BASE_PAGE_NO_FOUND}`,
     meta: {},
@@ -97,14 +98,13 @@ export const base = [
         component: PersonalCenter
       }
     ]
-  },
-  { path: '/:pathMatch(.*)*', redirect: { name: BASE_PAGE_NO_FOUND } }
+  }
 ]
-
+// 通用匹配，404 页面
+export const pathMatch = { path: '/:pathMatch(.*)*', name: BASE_PAGE_PATH_MATCH, redirect: { name: BASE_PAGE_NO_FOUND } }
 // 业务路由，需要授权访问
-export const permissions: Record<string, RouteRecordRaw> = {
-  // 首页
-  DEFAULT_VIEW_HOME: {
+export const permissions: RouteRecordRaw[] = [
+  {
     path: `/${DEFAULT_VIEW_HOME}`,
     meta: {},
     component: DefaultLayout,
@@ -116,5 +116,4 @@ export const permissions: Record<string, RouteRecordRaw> = {
       }
     ]
   }
-  //
-}
+]

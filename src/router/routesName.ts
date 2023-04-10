@@ -8,6 +8,8 @@ export const BASE_PAGE_UN_AUTH_ACCESS = 'unAuthAccess'
 export const BASE_PAGE_LOGIN = 'login'
 export const BASE_PAGE_LOGOUT = 'logout'
 export const BASE_PAGE_REGISTER = 'register'
+// 404 匹配路由
+export const BASE_PAGE_PATH_MATCH = 'pathMatch'
 // 帮助中心
 export const BASE_PAGE_HELP = 'helper'
 // 首页
