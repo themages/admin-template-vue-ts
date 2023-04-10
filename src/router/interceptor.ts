@@ -25,7 +25,7 @@ export const beforeEach: NavigationGuardWithThis<void> = async (to: RouteLocatio
     next({
       path: to.path,
       params: to.params,
-      query: to.query
+      query: { redirect: to.fullPath }
     })
   }
 }
