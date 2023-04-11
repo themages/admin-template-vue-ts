@@ -33,7 +33,7 @@ export function resetRouter (): void {
 // 使用 push 等待导航结果
 export async function goToRouteName (name: string): Promise<void> {
   const navigationResult = await router.push({ name })
-  // 给用户显示一个小通知
+  // 给用户显示一个小通知，举例
   if (isNavigationFailure(navigationResult, NavigationFailureType.aborted)) {
     console.warn('导航被中断了!')
   } else if (isNavigationFailure(navigationResult, NavigationFailureType.cancelled)) {
