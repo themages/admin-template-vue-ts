@@ -12,7 +12,6 @@ import {
   BASE_PAGE_PATH_MATCH
 } from '@/router/routesName'
 const MenuBar = async (): Promise<Component> => await import('@/components/user/MenuBar.vue')
-const PersonalCenter = async (): Promise<Component> => await import('@/components/user/PersonalCenter.vue')
 const BasicLayout = async (): Promise<Component> => await import('@/layout/BasicLayout.vue')
 const DefaultLayout = async (): Promise<Component> => await import('@/layout/DefaultLayout.vue')
 const NoFound = async (): Promise<Component> => await import('@/page/NoFound.vue')
@@ -21,6 +20,7 @@ const UnauthorizedAccess = async (): Promise<Component> => await import('@/page/
 const LoginComponent = async (): Promise<Component> => await import('@/views/login/loginComponent.vue')
 const RegisterComponent = async (): Promise<Component> => await import('@/views/login/registerComponent.vue')
 const HomeComponent = async (): Promise<Component> => await import('@/views/home/homeComponent.vue')
+const HelpComponent = async (): Promise<Component> => await import('@/views/helper/helpComponent.vue')
 
 // 基础路由，无需权限，公开访问
 export const base: RouteRecordRaw[] = [
@@ -95,7 +95,7 @@ export const base: RouteRecordRaw[] = [
       {
         path: '',
         name: BASE_PAGE_HELP,
-        component: PersonalCenter
+        component: HelpComponent
       }
     ]
   }
