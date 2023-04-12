@@ -26,7 +26,7 @@ const HomeComponent = async (): Promise<Component> => await import('@/views/home
 export const base: RouteRecordRaw[] = [
   {
     path: `/${BASE_PAGE_NO_FOUND}`,
-    meta: {},
+    meta: { status: 0 },
     component: BasicLayout,
     children: [
       {
@@ -38,7 +38,7 @@ export const base: RouteRecordRaw[] = [
   },
   {
     path: `/${BASE_PAGE_ACCOUNT_DISABLED}`,
-    meta: {},
+    meta: { status: 0 },
     component: BasicLayout,
     children: [
       {
@@ -50,7 +50,7 @@ export const base: RouteRecordRaw[] = [
   },
   {
     path: `/${BASE_PAGE_UN_AUTH_ACCESS}`,
-    meta: {},
+    meta: { status: 0 },
     component: BasicLayout,
     children: [
       {
@@ -65,7 +65,7 @@ export const base: RouteRecordRaw[] = [
   },
   {
     path: `/${BASE_PAGE_LOGIN}`,
-    meta: {},
+    meta: { status: 0 },
     component: BasicLayout,
     children: [
       {
@@ -77,7 +77,7 @@ export const base: RouteRecordRaw[] = [
   },
   {
     path: `/${BASE_PAGE_REGISTER}`,
-    meta: {},
+    meta: { status: 0 },
     component: BasicLayout,
     children: [
       {
@@ -89,7 +89,7 @@ export const base: RouteRecordRaw[] = [
   },
   {
     path: `/${BASE_PAGE_HELP}`,
-    meta: {},
+    meta: { status: 0 },
     component: BasicLayout,
     children: [
       {
@@ -101,17 +101,22 @@ export const base: RouteRecordRaw[] = [
   }
 ]
 // 通用匹配，404 页面
-export const pathMatch = { path: '/:pathMatch(.*)*', name: BASE_PAGE_PATH_MATCH, redirect: { name: BASE_PAGE_NO_FOUND } }
+export const pathMatch = {
+  path: '/:pathMatch(.*)*',
+  meta: { status: 0 },
+  name: BASE_PAGE_PATH_MATCH,
+  redirect: { name: BASE_PAGE_NO_FOUND }
+}
 // 业务路由，需要授权访问
 export const permissionsRoutes: RouteRecordRaw[] = [
   {
     path: `/${DEFAULT_VIEW_HOME}`,
-    meta: { code: '' },
+    meta: { code: '', status: 5 },
     component: DefaultLayout,
     children: [
       {
         path: '',
-        meta: { code: '' },
+        meta: { code: '', status: 5 },
         name: DEFAULT_VIEW_HOME,
         component: HomeComponent
       }

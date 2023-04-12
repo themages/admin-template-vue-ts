@@ -14,6 +14,7 @@ import {
   // BASE_PAGE_PATH_MATCH,
   DEFAULT_VIEW_HOME
 } from '@/router/routesName'
+import { UserAccountStatusTypeEnum } from '@/enums/route/roles'
 // 无需权限，路由白名单
 const whitelist: RouteRecordName[] = [BASE_PAGE_NO_FOUND, BASE_PAGE_ACCOUNT_DISABLED, BASE_PAGE_UN_AUTH_ACCESS, BASE_PAGE_LOGIN, BASE_PAGE_REGISTER, BASE_PAGE_HELP]
 export const beforeEach: NavigationGuardWithThis<void> = async (to: RouteLocationNormalized, from: RouteLocationNormalized, next): Promise<void> => {
@@ -43,7 +44,13 @@ export const beforeEach: NavigationGuardWithThis<void> = async (to: RouteLocatio
         routeStore.setRoutes()
         next(to)
       } else {
-        next()
+        // 进入页面，需要验证账号状态
+        if (userStore.accountStatus >= to.meta.status) {
+          next()
+        } else {
+          // 进入对应账号提示页面
+          next(userStore.accountStatus === UserAccountStatusTypeEnum.forbidden ? BASE_PAGE_ACCOUNT_DISABLED : BASE_PAGE_UN_AUTH_ACCESS)
+        }
       }
       console.log('路由列表：%O', router.getRoutes())
     }
