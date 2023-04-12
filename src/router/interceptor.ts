@@ -14,7 +14,7 @@ import {
   // BASE_PAGE_PATH_MATCH,
   DEFAULT_VIEW_HOME
 } from '@/router/routesName'
-import { UserAccountStatusEnum } from '@/enums/route/roles'
+import { UserAccountStatusEnum } from '@/enums/user/roles'
 // 无需权限，路由白名单
 const whitelist: RouteRecordName[] = [BASE_PAGE_NO_FOUND, BASE_PAGE_ACCOUNT_DISABLED, BASE_PAGE_UN_AUTH_ACCESS, BASE_PAGE_LOGIN, BASE_PAGE_REGISTER, BASE_PAGE_HELP]
 export const beforeEach: NavigationGuardWithThis<void> = async (to: RouteLocationNormalized, from: RouteLocationNormalized, next): Promise<void> => {
