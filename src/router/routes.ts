@@ -101,7 +101,7 @@ export const base: RouteRecordRaw[] = [
   }
 ]
 // 通用匹配，404 页面
-export const pathMatch = {
+export const pathMatch: RouteRecordRaw = {
   path: '/:pathMatch(.*)*',
   meta: { status: 0 },
   name: BASE_PAGE_PATH_MATCH,
