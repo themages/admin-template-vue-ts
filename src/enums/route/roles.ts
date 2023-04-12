@@ -1,4 +1,4 @@
-export enum UserAccountStatusTypeEnum {
+export enum UserAccountStatusEnum {
   forbidden = 1, // 禁用状态/黑名单
   registered = 2, // 已注册状态
   unaudited = 3, // 未审核状态
