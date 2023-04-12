@@ -103,14 +103,15 @@ export const base: RouteRecordRaw[] = [
 // 通用匹配，404 页面
 export const pathMatch = { path: '/:pathMatch(.*)*', name: BASE_PAGE_PATH_MATCH, redirect: { name: BASE_PAGE_NO_FOUND } }
 // 业务路由，需要授权访问
-export const permissions: RouteRecordRaw[] = [
+export const permissionsRoutes: RouteRecordRaw[] = [
   {
     path: `/${DEFAULT_VIEW_HOME}`,
-    meta: {},
+    meta: { code: '' },
     component: DefaultLayout,
     children: [
       {
         path: '',
+        meta: { code: '' },
         name: DEFAULT_VIEW_HOME,
         component: HomeComponent
       }

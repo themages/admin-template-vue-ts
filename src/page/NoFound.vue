@@ -1,8 +1,11 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import { useRoute } from 'vue-router'
+const route = useRoute()
+</script>
 
 <template>
   <div class="no-found">
-    页面未找到
+    {{route.redirectedFrom?.fullPath}}页面未找到
   </div>
 </template>
 
