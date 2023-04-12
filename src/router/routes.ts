@@ -11,7 +11,7 @@ import {
   DEFAULT_VIEW_HOME,
   BASE_PAGE_PATH_MATCH
 } from '@/router/routesName'
-const MenuBar = async (): Promise<Component> => await import('@/components/user/MenuBar.vue')
+const UserMenuBar = async (): Promise<Component> => await import('@/components/user/UserMenuBar.vue')
 const BasicLayout = async (): Promise<Component> => await import('@/layout/BasicLayout.vue')
 const DefaultLayout = async (): Promise<Component> => await import('@/layout/DefaultLayout.vue')
 const NoFound = async (): Promise<Component> => await import('@/page/NoFound.vue')
@@ -58,7 +58,7 @@ export const base: RouteRecordRaw[] = [
         name: BASE_PAGE_UN_AUTH_ACCESS,
         components: {
           default: UnauthorizedAccess,
-          user: MenuBar
+          user: UserMenuBar
         }
       }
     ]
