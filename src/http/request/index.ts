@@ -6,7 +6,7 @@ const http = axios.create()
 
 // Add a request interceptor
 http.interceptors.request.use(
-  async function (config) {
+  function (config) {
     const tokenStore = useTokenStore()
     const httpStore = useHTTPStore()
     // Do something before request is sent
