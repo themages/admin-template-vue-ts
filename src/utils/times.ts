@@ -13,7 +13,7 @@ export function getGuess (): string {
 export function getUTCSecond (): number {
   return dayjs.utc().second()
 }
-// 格式化时间: hours:13 minutes:2 seconds:1 => 13:02:01
+// 补全时间: hours:13 minutes:2 seconds:1 => 13:02:01
 export function formatDuration (duration: {
   seconds: number
   minutes: number

@@ -1,8 +1,11 @@
 import type { RouteRecordName, NavigationGuardWithThis, NavigationHookAfter, RouteLocationNormalized } from 'vue-router'
 import router from '@/router/index'
+import { getGuess } from '@/utils/times'
+import { fingerprint } from '@/utils/fingerprint'
 import { useTokenStore } from '@/store/token'
 import { useUserStore } from '@/store/user'
 import { useRouteStore } from '@/store/route'
+import { useHTTPStore } from '@/store/http'
 import {
   BASE_PAGE_NO_FOUND,
   BASE_PAGE_ACCOUNT_DISABLED,
@@ -22,6 +25,15 @@ export const beforeEach: NavigationGuardWithThis<void> = async (to: RouteLocatio
   const tokenStore = useTokenStore()
   const userStore = useUserStore()
   const routeStore = useRouteStore()
+  const httpStore = useHTTPStore()
+  if (httpStore.fingerprint === '') {
+    httpStore.setFingerprint(await fingerprint())
+    console.log('指纹: ', httpStore.fingerprint)
+  }
+  if (httpStore.timezone === '') {
+    httpStore.setTimezone(getGuess())
+    console.log('时区: ', httpStore.timezone)
+  }
   // 是否存在 token
   if (tokenStore.token !== '') {
     // 如果已登陆，访问登陆页面，则重定向到首页
