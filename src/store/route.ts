@@ -7,6 +7,7 @@ import { pathMatch, permissionsRoutes } from '@/router/routes'
 function filterAsyncRoutes (): RouteRecordRaw[] {
   const accessRoutes: RouteRecordRaw[] = []
   permissionsRoutes.forEach((route) => {
+    accessRoutes.push(route)
     router.addRoute(route)
   })
   accessRoutes.push(pathMatch)
