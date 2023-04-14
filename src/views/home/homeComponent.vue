@@ -1,12 +1,12 @@
 <script setup lang="ts">
 import { formatDuration, getNow } from '@/utils/times'
-import { tuApiRequest } from '@/api/demo'
+import { testRequest } from '@/api/demo'
 console.log(formatDuration({
   seconds: 13,
   minutes: 32,
   hours: 3
 }))
-tuApiRequest({
+testRequest({
   showMsg: true,
   showError: true
 })
