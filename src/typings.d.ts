@@ -15,9 +15,7 @@ declare module 'axios' {
     showLoading?: boolean
     // 是否显示错误提示
     showError?: boolean
-    // 是否显示成功提示
-    showSuccess?: boolean
-    // 是否显示提示
+    // 是否显示消息提示
     showMsg?: boolean
   }
   interface AxiosResponseData<T = any> {
