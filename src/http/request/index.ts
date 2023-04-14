@@ -7,6 +7,9 @@ const http = axios.create()
 // Add a request interceptor
 http.interceptors.request.use(
   function (config) {
+    if (config.showLoading != null && config.showLoading) {
+      console.log('Loading Starting')
+    }
     const tokenStore = useTokenStore()
     const httpStore = useHTTPStore()
     // Do something before request is sent

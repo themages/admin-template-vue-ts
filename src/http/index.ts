@@ -45,7 +45,7 @@ export default async (config: AxiosRequestConfig): Promise<AxiosResponseData> =>
   // 请求完成回调
   function finallyCallback (): void {
     if (config.showLoading != null && config.showLoading) {
-      console.log('Loading')
+      console.log('Loading Ended')
     }
     console.log('finally')
   }

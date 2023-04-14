@@ -1,6 +1,6 @@
 import { defineStore } from 'pinia'
 import { ref } from 'vue'
-import type { UserInfoTypes, UseUserStoreTypes } from '@/config/typings/userStore'
+import type { UserInfoTypes, UseUserStoreTypes } from '@/config/typings/store/userStore'
 import { UserAccountStatusEnum } from '@/enums/user/roles'
 export const useUserStore = defineStore('user', (): UseUserStoreTypes => {
   const userinfo = ref<UserInfoTypes | null>(null) // 用户信息
