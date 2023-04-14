@@ -2,6 +2,7 @@ import { resolve } from 'path'
 import { defineConfig } from 'vite'
 import Inspect from 'vite-plugin-inspect'
 import vue from '@vitejs/plugin-vue'
+import VueI18nPlugin from '@intlify/unplugin-vue-i18n/vite'
 
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -16,6 +17,9 @@ export default defineConfig({
   },
   plugins: [
     vue(),
+    VueI18nPlugin({
+      include: resolve(__dirname, './src/lang/locales/**'),
+    }),
     Inspect(),
   ],
   resolve: {
