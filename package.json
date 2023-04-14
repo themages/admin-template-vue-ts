@@ -22,10 +22,10 @@
   },
   "lint-staged": {
     "src/**/*.{js,jsx,ts,tsx,vue}": [
-      "eslint --fix"
+      "pnpm lint:eslint"
     ],
     "src/**/*.{css,scss,vue}": [
-      "stylelint --fix"
+      "pnpm lint:style"
     ]
   },
   "keywords": [
