@@ -8,7 +8,7 @@ export default defineConfig({
   server: {
     proxy: {
       "/200": {
-        target: "https://www.baidu.com",
+        target: "https://www.google.com",
         changeOrigin: true,
         rewrite: (path) => path.replace(/^\/200/, '')
       },
