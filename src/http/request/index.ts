@@ -10,7 +10,7 @@ http.interceptors.request.use(
     const tokenStore = useTokenStore()
     const httpStore = useHTTPStore()
     // Do something before request is sent
-    config.headers.Authorization = tokenStore.token
+    config.headers.Authorization = `${tokenStore.type} ${tokenStore.token}`
     config.headers.DeviceId = httpStore.fingerprint
     config.headers.TimeZone = httpStore.timezone
     return config

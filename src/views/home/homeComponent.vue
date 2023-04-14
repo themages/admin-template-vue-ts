@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { formatDuration } from '@/utils/times'
+import { formatDuration, getNow } from '@/utils/times'
 console.log(formatDuration({
   seconds: 13,
   minutes: 32,
@@ -9,7 +9,8 @@ console.log(formatDuration({
 
 <template>
   <div class="home">
-    首页
+    <p>首页</p>
+    <div>当前时间：{{ getNow() }}</div>
   </div>
 </template>
 
