@@ -1,6 +1,6 @@
 import { defineStore } from 'pinia'
 import { ref } from 'vue'
-import type { UseHTTPStoreTypes } from '@/config/typings/httpStore'
+import type { UseHTTPStoreTypes } from '@/config/typings/store/httpStore'
 export const useHTTPStore = defineStore('http', (): UseHTTPStoreTypes => {
   const fingerprint = ref<string>('') // 设备指纹
   const timezone = ref<string>('') // 时区

@@ -1,7 +1,7 @@
 import { defineStore } from 'pinia'
 import { ref } from 'vue'
 import type { RouteRecordRaw } from 'vue-router'
-import type { UseRoutesStoreTypes } from '@/config/typings/routeStore'
+import type { UseRoutesStoreTypes } from '@/config/typings/store/routeStore'
 import router from '@/router/index'
 import { pathMatch, permissionsRoutes } from '@/router/routes'
 function filterAsyncRoutes (): RouteRecordRaw[] {
