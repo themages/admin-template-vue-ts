@@ -38,7 +38,7 @@ export default async (config: AxiosRequestConfig): Promise<AxiosResponseData> =>
       code: error.code,
       success: false,
       msg: error.message,
-      data: '',
+      data: null,
       time: getNow()
     }
   }
