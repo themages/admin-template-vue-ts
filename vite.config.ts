@@ -5,6 +5,15 @@ import vue from '@vitejs/plugin-vue'
 
 // https://vitejs.dev/config/
 export default defineConfig({
+  server: {
+    proxy: {
+      "/200": {
+        target: "https://www.baidu.com",
+        changeOrigin: true,
+        rewrite: (path) => path.replace(/^\/200/, '')
+      },
+    },
+  },
   plugins: [
     vue(),
     Inspect(),

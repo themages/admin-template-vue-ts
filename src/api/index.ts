@@ -1,7 +1,7 @@
 import request from '@/http/index'
-import type { AxiosResponseData } from 'axios'
+import type { AxiosRequestConfig, AxiosResponseData } from 'axios'
 
-export const Get = async (url: string, params: any, config: any = {}): Promise<AxiosResponseData> => {
+export const Get = async (url: string, params?: any, config: AxiosRequestConfig = {}): Promise<AxiosResponseData> => {
   return await request({
     url,
     method: 'get',
@@ -10,7 +10,7 @@ export const Get = async (url: string, params: any, config: any = {}): Promise<A
   })
 }
 
-export const Post = async (url: string, data: any, config: any = {}): Promise<AxiosResponseData> => {
+export const Post = async (url: string, data?: any, config: AxiosRequestConfig = {}): Promise<AxiosResponseData> => {
   return await request({
     url,
     method: 'post',
@@ -19,7 +19,7 @@ export const Post = async (url: string, data: any, config: any = {}): Promise<Ax
   })
 }
 
-export const Put = async (url: string, data: any, config: any = {}): Promise<AxiosResponseData> => {
+export const Put = async (url: string, data?: any, config: AxiosRequestConfig = {}): Promise<AxiosResponseData> => {
   return await request({
     url,
     method: 'put',
@@ -28,7 +28,7 @@ export const Put = async (url: string, data: any, config: any = {}): Promise<Axi
   })
 }
 
-export const Delete = async (url: string, data: any, config: any = {}): Promise<AxiosResponseData> => {
+export const Delete = async (url: string, data?: any, config: AxiosRequestConfig = {}): Promise<AxiosResponseData> => {
   return await request({
     url,
     method: 'delete',

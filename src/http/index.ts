@@ -9,7 +9,7 @@ export default async (config: AxiosRequestConfig): Promise<AxiosResponseData> =>
     console.log('请求成功回调: %O', res)
     const { data } = res.data
     if (config.showMsg != null && config.showMsg) {
-      console.log('消息提示: 登陆密码有误')
+      console.log('%c消息提示', 'color:blue;text-decoration:underline')
     }
     if (data.code === httpSuccessCode) {
       return {
@@ -32,7 +32,7 @@ export default async (config: AxiosRequestConfig): Promise<AxiosResponseData> =>
   function errorCallback (error: any): AxiosResponseData {
     console.error('请求失败回调: %O', error)
     if (config.showError != null && config.showError) {
-      console.log('错误提示：401 权限错误')
+      console.log('%c错误提示：%s', 'color:red;text-decoration:underline', error.message)
     }
     return {
       code: error.code,
@@ -47,7 +47,7 @@ export default async (config: AxiosRequestConfig): Promise<AxiosResponseData> =>
     if (config.showLoading != null && config.showLoading) {
       console.log('Loading Ended')
     }
-    console.log('finally')
+    console.log('%crequest finally: %s', 'color:#666', config.url)
   }
   return await http(config).then(successCallback).catch(errorCallback).finally(finallyCallback)
 }
