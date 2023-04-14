@@ -18,7 +18,10 @@ module.exports = {
         "test", // 增加测试
         "chore", // 构建过程或辅助工具的变动
         "revert", // 回退
-        "build", // 打包
+        "build", // 影响项目构建打包或依赖项修改
+        "ci", // 持续集成相关文件修改
+        "release", // 发布新版本
+        "workflow", // 工作流相关文件修改
       ],
     ],
     // Subject 大小写不做校验
