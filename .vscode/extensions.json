@@ -20,6 +20,8 @@
     "kisstkondoros.vscode-codemetrics",
     "Vue.volar",
     "Vue.vscode-typescript-vue-plugin",
-    "stylelint.vscode-stylelint"
+    "stylelint.vscode-stylelint",
+    "GitHub.copilot",
+    "GitHub.copilot-labs"
   ]
 }
